@@ -21,6 +21,7 @@ class SocialRatingCalculationListener {
     }
 
     private static String personId(final String firstName, final String lastName) {
-        return (firstName + "." + lastName).trim().toLowerCase();
+        final String id = firstName + "." + lastName;
+        return id.trim().toLowerCase();
     }
 }
