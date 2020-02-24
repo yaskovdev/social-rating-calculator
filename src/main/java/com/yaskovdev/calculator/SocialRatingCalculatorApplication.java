@@ -1,13 +1,13 @@
 package com.yaskovdev.calculator;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import static org.springframework.boot.SpringApplication.run;
 
 @SpringBootApplication
 public class SocialRatingCalculatorApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SocialRatingCalculatorApplication.class, args);
-	}
-
+    public static void main(final String[] args) {
+        run(SocialRatingCalculatorApplication.class, args);
+    }
 }

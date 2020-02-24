@@ -1,1 +1,1 @@
-# social-rating-calculator-service
+# Social Rating Calculator
