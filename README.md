@@ -32,3 +32,7 @@ java -jar ./target/*.jar --spring.config.location=classpath:/local.properties
 ```
 
 You can run Redis CLI using `src/redis-cli` command to fetch data stored in Redis, etc.
+
+## To Run With Docker
+
+See [Social Rating Docker Compose](https://github.com/yaskovdev/social-rating-docker-compose).
