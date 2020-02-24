@@ -27,7 +27,6 @@ src/redis-server
 Build and run the application:
 ```
 cd social-rating-calculator
-rm -rf target
 mvn clean package
 java -jar ./target/*.jar
 ```
