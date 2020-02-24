@@ -29,12 +29,12 @@ Build and run the application:
 cd social-rating-calculator
 rm -rf target
 mvn clean package
-java -jar ./target/social-rating-calculator-*.jar
+java -jar ./target/*.jar
 ```
 
 You can specify alternative properties file for the application, e.g.:
 ```
-java -jar ./target/social-rating-calculator-*.jar --spring.config.location=./prod.properties
+java -jar ./target/*.jar --spring.config.location=./prod.properties
 ```
 
 You can run Redis CLI using `src/redis-cli` command to fetch data stored in Redis, etc.

@@ -25,7 +25,7 @@ class KafkaConsumerConfig {
         deserializer.setRemoveTypeHeaders(false);
         deserializer.addTrustedPackages("com.yaskovdev.collector");
         deserializer.setUseTypeMapperForKey(true);
-        final Map<String, Object> props = of(BOOTSTRAP_SERVERS_CONFIG, "localhost:9092", GROUP_ID_CONFIG, "social-rating");
+        final Map<String, Object> props = of(BOOTSTRAP_SERVERS_CONFIG, "kafka:9093", GROUP_ID_CONFIG, "social-rating");
         return new DefaultKafkaConsumerFactory<>(props, new StringDeserializer(), deserializer);
     }
 
