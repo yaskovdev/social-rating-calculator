@@ -1,5 +1,6 @@
 package com.yaskovdev.calculator;
 
+import lombok.RequiredArgsConstructor;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,7 +18,10 @@ import static org.apache.kafka.clients.consumer.ConsumerConfig.GROUP_ID_CONFIG;
 
 @EnableKafka
 @Configuration
+@RequiredArgsConstructor
 class KafkaConsumerConfig {
+
+    private final CalculatorConfig config;
 
     @Bean
     ConsumerFactory<String, SocialRatingCalculationRequest> consumerFactory() {
@@ -25,7 +29,8 @@ class KafkaConsumerConfig {
         deserializer.setRemoveTypeHeaders(false);
         deserializer.addTrustedPackages("com.yaskovdev.collector");
         deserializer.setUseTypeMapperForKey(true);
-        final Map<String, Object> props = of(BOOTSTRAP_SERVERS_CONFIG, "kafka:9093", GROUP_ID_CONFIG, "social-rating");
+        final Map<String, Object> props = of(BOOTSTRAP_SERVERS_CONFIG, config.getKafkaBootstrapServers(),
+                GROUP_ID_CONFIG, "social-rating");
         return new DefaultKafkaConsumerFactory<>(props, new StringDeserializer(), deserializer);
     }
 

@@ -27,13 +27,8 @@ src/redis-server
 Build and run the application:
 ```
 cd social-rating-calculator
-mvn clean package
-java -jar ./target/*.jar
-```
-
-You can specify alternative properties file for the application, e.g.:
-```
-java -jar ./target/*.jar --spring.config.location=./prod.properties
+mvn clean package -D maven.test.skip
+java -jar ./target/*.jar --spring.config.location=classpath:/local.properties
 ```
 
 You can run Redis CLI using `src/redis-cli` command to fetch data stored in Redis, etc.
