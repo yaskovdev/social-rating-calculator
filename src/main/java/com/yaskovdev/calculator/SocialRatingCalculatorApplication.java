@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import static org.springframework.boot.SpringApplication.run;
 
 @SpringBootApplication
-public class SocialRatingCalculatorApplication {
+class SocialRatingCalculatorApplication {
 
     public static void main(final String[] args) {
         run(SocialRatingCalculatorApplication.class, args);
