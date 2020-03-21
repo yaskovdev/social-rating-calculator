@@ -21,10 +21,8 @@ import static org.apache.kafka.clients.consumer.ConsumerConfig.GROUP_ID_CONFIG;
 @RequiredArgsConstructor
 class KafkaConsumerConfig {
 
-    private final CalculatorConfig config;
-
     @Bean
-    ConsumerFactory<String, SocialRatingCalculationRequest> consumerFactory() {
+    ConsumerFactory<String, SocialRatingCalculationRequest> consumerFactory(final CalculatorConfig config) {
         final JsonDeserializer<SocialRatingCalculationRequest> deserializer = new JsonDeserializer<>(SocialRatingCalculationRequest.class);
         deserializer.setRemoveTypeHeaders(false);
         deserializer.addTrustedPackages("com.yaskovdev.collector");
